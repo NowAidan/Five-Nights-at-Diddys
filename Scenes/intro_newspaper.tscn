@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://ci2n8hpk87wxt"]
+
+[ext_resource type="Texture2D" uid="uid://0opg3y2lrufg" path="res://Assests/intro_newspaper.png" id="1_2chb3"]
+[ext_resource type="Shader" path="res://Assests/intro_newspaper.gdshader" id="1_k3vnw"]
+[ext_resource type="Script" path="res://Scripts/Intro Newspaper.gd" id="1_mjela"]
+[ext_resource type="Texture2D" uid="uid://gue2osjoe4t6" path="res://Assests/wood_table.jpg" id="1_xqdsx"]
+[ext_resource type="Texture2D" uid="uid://bqgjfy4bsia28" path="res://Assests/intro_newspaper_shadow.png" id="3_jdc14"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_flc18"]
+shader = ExtResource("1_k3vnw")
+shader_parameter/amount = 40
+
+[sub_resource type="Animation" id="Animation_rv4lo"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wy506"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y2umu"]
+_data = {
+"fade_in": SubResource("Animation_rv4lo"),
+"fade_out": SubResource("Animation_wy506")
+}
+
+[node name="Intro Newspaper" type="Node2D"]
+material = SubResource("ShaderMaterial_flc18")
+position = Vector2(484, 170)
+script = ExtResource("1_mjela")
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(602, 554)
+scale = Vector2(1.7185, 1.04)
+skew = 0.174533
+texture = ExtResource("1_xqdsx")
+
+[node name="IntroNewspaper" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(510, 497)
+scale = Vector2(0.799999, 0.799999)
+skew = 0.174533
+texture = ExtResource("1_2chb3")
+
+[node name="IntroNewspaperShadow" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(510, 497)
+scale = Vector2(0.799999, 0.799999)
+skew = 0.174533
+texture = ExtResource("3_jdc14")
+offset = Vector2(30, 30)
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y2umu")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+z_index = 5
+offset_left = -76.0
+offset_top = -71.0
+offset_right = -36.0
+offset_bottom = -31.0
+scale = Vector2(52.0872, 30.5158)
+color = Color(0, 0, 0, 1)
+
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

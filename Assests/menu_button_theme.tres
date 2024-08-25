@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cvhdupl0n7uja"]
+
+[ext_resource type="FontFile" uid="uid://bf0a4bnwbnayb" path="res://Assests/consolab.ttf" id="1_608uf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o63ki"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2jt6k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4r7y3"]
+
+[resource]
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 60
+Button/fonts/font = ExtResource("1_608uf")
+Button/styles/hover = SubResource("StyleBoxEmpty_o63ki")
+Button/styles/normal = SubResource("StyleBoxEmpty_2jt6k")
+Button/styles/pressed = SubResource("StyleBoxEmpty_4r7y3")

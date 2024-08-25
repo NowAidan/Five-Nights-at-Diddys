@@ -1,0 +1,1143 @@
+[gd_scene load_steps=48 format=3 uid="uid://c2jr86ja8egls"]
+
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_5fnpt"]
+[ext_resource type="Script" path="res://Scripts/Camera Controller.gd" id="1_fu8xp"]
+[ext_resource type="PackedScene" uid="uid://b76ho2vbdxtna" path="res://Assests/Exports/Monitor/monitor.gltf" id="2_25y33"]
+[ext_resource type="Shader" path="res://Shaders/pixel.gdshader" id="2_yph36"]
+[ext_resource type="Script" path="res://Scripts/Cameras.gd" id="3_35g41"]
+[ext_resource type="PackedScene" uid="uid://b2ihsakbcyw60" path="res://Assests/Exports/Monitor/camera-monitor.gltf" id="3_ij6kh"]
+[ext_resource type="PackedScene" uid="uid://3s1gh5u7silo" path="res://Assests/Exports/Desk/desk.gltf" id="4_320yq"]
+[ext_resource type="PackedScene" uid="uid://16d8vngqj8y2" path="res://Assests/Exports/Walls/wall.gltf" id="5_4bte4"]
+[ext_resource type="PackedScene" uid="uid://che0yar65gy54" path="res://Assests/Exports/Walls/door-frame.gltf" id="6_g4hkb"]
+[ext_resource type="PackedScene" uid="uid://cu5ckctkikq1" path="res://Assests/Exports/Walls/door.gltf" id="7_2apby"]
+[ext_resource type="Script" path="res://Scripts/Door Controller.gd" id="7_6hxkx"]
+[ext_resource type="PackedScene" uid="uid://dba3d8r28ug6b" path="res://Scenes/floor.tscn" id="8_nevbt"]
+[ext_resource type="PackedScene" uid="uid://dit020r03omuo" path="res://Assests/Exports/Buttons/door-button.gltf" id="9_af511"]
+[ext_resource type="PackedScene" uid="uid://cuwn60xgftteg" path="res://Assests/Exports/Posters/poster-office.gltf" id="10_y6utx"]
+[ext_resource type="Script" path="res://Scripts/Boop.gd" id="11_bynmc"]
+[ext_resource type="AudioStream" uid="uid://b7jgtp1ai2dvv" path="res://Sounds/Clown Horn.mp3" id="13_sqpk4"]
+[ext_resource type="AudioStream" uid="uid://yvpt3kr4ngxb" path="res://Sounds/Metal Door.mp3" id="14_fet40"]
+[ext_resource type="Texture2D" uid="uid://r7xbpu30yyo4" path="res://Assests/Exports/Art/camera-button.png" id="15_akotq"]
+[ext_resource type="FontFile" uid="uid://b42wpgls0ip7s" path="res://Assests/consola.ttf" id="16_1itst"]
+[ext_resource type="Script" path="res://Scripts/Camera Manager.gd" id="17_4gbtx"]
+[ext_resource type="Texture2D" uid="uid://cc1t62ptqfiux" path="res://Assests/static/static_frame_1.png" id="18_c6sk5"]
+[ext_resource type="Texture2D" uid="uid://cpkqfqi3f7q3a" path="res://Assests/static/static_frame_2.png" id="19_w8h0w"]
+[ext_resource type="Texture2D" uid="uid://uttouagqr20b" path="res://Assests/static/static_frame_3.png" id="20_6wsu4"]
+[ext_resource type="Texture2D" uid="uid://b4nbbl4e36j1d" path="res://Assests/static/static_frame_4.png" id="21_yh2b7"]
+[ext_resource type="Texture2D" uid="uid://brrmh86sbskvw" path="res://Assests/static/static_frame_5.png" id="22_t5oe7"]
+[ext_resource type="Texture2D" uid="uid://lyt8huuwqniu" path="res://Assests/Cameras/map.png" id="23_jhmht"]
+[ext_resource type="Script" path="res://Scripts/Camera Button.gd" id="24_iyn0x"]
+[ext_resource type="AudioStream" uid="uid://71apswiuw3to" path="res://Sounds/Camera Click.ogg" id="26_h4rfv"]
+
+[sub_resource type="Animation" id="Animation_coyne"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Monitor/CameraMonitor:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_x8lvv"]
+resource_name = "monitor_down"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Monitor/CameraMonitor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 4.29153e-06, -0.191683), Vector3(0, -0.431892, -0.323678)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Monitor/CameraMonitor:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(-0.463333, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Monitor/CameraMonitor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_y3sfl"]
+resource_name = "monitor_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Monitor/CameraMonitor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.431892, -0.323678), Vector3(0, 4.29153e-06, -0.191683)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Monitor/CameraMonitor:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.463333, 0, 0), Vector3(1.5708, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Monitor/CameraMonitor:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8jyev"]
+_data = {
+"RESET": SubResource("Animation_coyne"),
+"monitor_down": SubResource("Animation_x8lvv"),
+"monitor_up": SubResource("Animation_y3sfl")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2c7ih"]
+size = Vector3(0.37, 1, 0.4)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gxmp3"]
+radius = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvknd"]
+shader = ExtResource("2_yph36")
+shader_parameter/pixelSize = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_bxbue"]
+font = ExtResource("16_1itst")
+font_size = 64
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ihvqv"]
+frames = 5
+speed_scale = 20.0
+frame_0/texture = ExtResource("18_c6sk5")
+frame_1/texture = ExtResource("19_w8h0w")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("20_6wsu4")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("21_yh2b7")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("22_t5oe7")
+frame_4/duration = 1.0
+
+[sub_resource type="Animation" id="Animation_e0ubl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Static:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0941176)]
+}
+
+[sub_resource type="Animation" id="Animation_h6y4x"]
+resource_name = "lost_communication"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Static:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.0941176)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c5k7w"]
+_data = {
+"RESET": SubResource("Animation_e0ubl"),
+"lost_communication": SubResource("Animation_h6y4x")
+}
+
+[sub_resource type="Animation" id="Animation_koctw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Building/Doors/Right Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2, 1.8, -0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Building/Doors/Left Door:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2, 1.8, -0.4)]
+}
+
+[sub_resource type="Animation" id="Animation_gvi7a"]
+resource_name = "ld_close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Building/Doors/Left Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2, 1.8, -0.4), Vector3(-2, 0, -0.4)]
+}
+
+[sub_resource type="Animation" id="Animation_slcds"]
+resource_name = "ld_open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Building/Doors/Left Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2, 0, -0.4), Vector3(-2, 1.8, -0.4)]
+}
+
+[sub_resource type="Animation" id="Animation_8co2f"]
+resource_name = "door"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Building/Doors/Right Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2, 1.8, -0.4), Vector3(2, 0, -0.4)]
+}
+
+[sub_resource type="Animation" id="Animation_0togb"]
+resource_name = "rd_open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Building/Doors/Right Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2, 7.45058e-08, -0.4), Vector3(2, 1.8, -0.4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8o6an"]
+_data = {
+"RESET": SubResource("Animation_koctw"),
+"ld_close": SubResource("Animation_gvi7a"),
+"ld_open": SubResource("Animation_slcds"),
+"rd_close": SubResource("Animation_8co2f"),
+"rd_open": SubResource("Animation_0togb")
+}
+
+[sub_resource type="Environment" id="Environment_1bbm0"]
+ambient_light_source = 2
+ambient_light_energy = 0.0
+reflected_light_source = 2
+glow_normalized = true
+glow_intensity = 4.67
+glow_strength = 1.36
+fog_light_color = Color(0.0675691, 0.0776699, 0.0935515, 1)
+fog_density = 0.8
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_5fnpt")
+
+[node name="Player" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985111, 0.2)
+script = ExtResource("1_fu8xp")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.514889, 0)
+fov = 70.0
+near = 0.001
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_8jyev")
+}
+
+[node name="Monitor" type="Node3D" parent="Player"]
+transform = Transform3D(0.7938, 0, 0, 0, 0.6048, 0, 0, 0, 0.9, 0, -2.38419e-07, -1)
+
+[node name="CameraMonitor" parent="Player/Monitor" instance=ExtResource("3_ij6kh")]
+transform = Transform3D(2.8, 0, 0, 0, 0.894571, 0.893867, 0, -0.446934, 1.78914, 0, -0.431892, -0.323678)
+
+[node name="Building" type="Node3D" parent="."]
+
+[node name="Monitor" parent="Building" instance=ExtResource("2_25y33")]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 1, -1.9)
+
+[node name="Desk" parent="Building" instance=ExtResource("4_320yq")]
+transform = Transform3D(0.822714, 0, 0, 0, 0.613825, 0, 0, 0, 0.55, 0, 0, -1.9)
+
+[node name="Walls" type="Node3D" parent="Building"]
+
+[node name="Wall" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.4)
+
+[node name="Wall33" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 0, -7.48374)
+
+[node name="Wall39" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -3.38715, 0, -7.48374)
+
+[node name="Wall18" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-0.417915, 0, -0.908486, 0, 1, 0, 0.908486, 0, -0.417915, 6.88582, 0, -7.38236)
+
+[node name="Wall4" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 0, 1.6)
+
+[node name="Wall9" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-1, 8.74228e-08, -2.13163e-14, -8.74228e-08, -1, -1.86353e-21, -2.13163e-14, 0, 1, 0, 5, 1.6)
+
+[node name="Wall8" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 3.8, 0, 2.4)
+
+[node name="Wall62" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 3.8, 1.9225, 2.4)
+
+[node name="Wall11" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -3.8, 0, 2.4)
+
+[node name="Wall13" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -5.88521, 0, -1.35)
+
+[node name="Wall16" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.88521, 0, -5.32511)
+
+[node name="Wall2" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9, 0, -0.4)
+
+[node name="Wall61" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-6.55005e-08, 0, 1, 0, 1, 0, -1.49848, 0, -4.37114e-08, 3.9, 2.31871, -0.4)
+
+[node name="Wall10" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9, 0, 3.35)
+
+[node name="Wall12" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(0.000902274, 0.00122093, -0.999999, -0.000523465, 0.999999, 0.00122045, 0.999999, 0.000522345, 0.000902923, -3.9, 0, 3.35)
+
+[node name="Wall3" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.9, 0, -0.4)
+
+[node name="Wall53" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 3.82137e-15, -1, 8.74228e-08, 1, 0, -4.37114e-08, -3.9, 4.04909, -0.4)
+
+[node name="Wall54" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 3.82137e-15, -1, 8.74228e-08, 1, 0, -4.37114e-08, -3.9, 4.04909, -3.81891)
+
+[node name="Wall55" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 3.82137e-15, -1, 8.74228e-08, 1, 0, -4.37114e-08, -3.9, 4.04909, -6.68246)
+
+[node name="Wall56" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 3.82137e-15, -1, 8.74228e-08, 1, 0, -4.37114e-08, -4.5611, 5.12395, -9.73486)
+
+[node name="Wall59" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 3.82137e-15, -1, 8.74228e-08, 1, 0, -4.37114e-08, -4.5611, 5.12395, -13.2995)
+
+[node name="Wall60" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-0.669195, 6.49627e-08, 0.743086, 3.82137e-15, -1, 8.74228e-08, 0.743086, 5.85029e-08, 0.669195, -4.1263, 5.12395, -15.6024)
+
+[node name="Wall57" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 3.82137e-15, -1, 8.74228e-08, 1, 0, -4.37114e-08, -3.9, 4.04909, -13.0036)
+
+[node name="Wall58" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 3.82137e-15, -1, 8.74228e-08, 1, 0, -4.37114e-08, -3.9, 4.04909, -14.8731)
+
+[node name="Wall5" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9, 0, -4.15)
+
+[node name="Wall6" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.9, 0, -4.15)
+
+[node name="Wall19" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9, 0, -16.5936)
+
+[node name="Wall34" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9, 0, -13.0654)
+
+[node name="Wall41" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.46551, 0, -13.0654)
+
+[node name="Wall42" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.46551, 0, -16.7128)
+
+[node name="Wall50" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 7.46551, 4.20631, -13.0654)
+
+[node name="Wall51" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 7.46551, 4.20631, -16.7128)
+
+[node name="Wall47" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 8.74228e-08, -1, 3.82137e-15, 1, 8.74228e-08, 4.37114e-08, 5.87953, 4.73256, -16.7128)
+
+[node name="Wall48" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 8.74228e-08, -1, 3.82137e-15, 1, 8.74228e-08, 4.37114e-08, 5.87953, 4.73256, -13.5942)
+
+[node name="Wall45" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 7.78606, 0, -14.9852)
+
+[node name="Wall46" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.78606, 0, -14.7446)
+
+[node name="Wall43" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 5.56669, 0, -11.0522)
+
+[node name="Wall52" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 5.56669, 2.16926, -11.0522)
+
+[node name="Wall44" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 5.56669, 0, -18.4797)
+
+[node name="Wall49" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 1.06581e-14, 9.31764e-22, -1, -8.74228e-08, 1.06581e-14, 8.74228e-08, -1, 5.56669, 4.26205, -18.4797)
+
+[node name="Wall35" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9, 0, -9.4178)
+
+[node name="Wall36" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9, 0, -7.1235)
+
+[node name="Wall37" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.9, 1.94679, -7.1235)
+
+[node name="Wall38" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 3.9, 4.67603, -3.5267)
+
+[node name="Wall26" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, -8.74228e-08, -1, -3.82137e-15, -1, 8.74228e-08, -1, 0, -4.37114e-08, 3.9, 4.77551, -16.5936)
+
+[node name="Wall20" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.9, 0, -16.5936)
+
+[node name="Wall23" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 3.82137e-15, -1, 8.74228e-08, 1, 0, -4.37114e-08, -3.9, 4.89017, -16.5936)
+
+[node name="Wall21" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.03825, 0, -18.543)
+
+[node name="Wall22" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-1.12384, 0, 8.74228e-08, 0, 1, 0, -9.82495e-08, 0, -1, 1.9442, 0, -18.543)
+
+[node name="Wall24" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 7.64274e-15, -1, 8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -2.03825, 4.89296, -18.543)
+
+[node name="Wall25" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-1.12384, 0, 8.74228e-08, 8.58925e-15, -1, 8.74228e-08, 9.82495e-08, 8.74228e-08, 1, 1.9442, 4.89296, -18.543)
+
+[node name="Wall7" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.76137, 0, -0.470441)
+
+[node name="Wall17" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-5.41171e-08, 0, -1, 0, 1, 0, 1.23805, 0, -4.37114e-08, -7.76137, 0, -4.30516)
+
+[node name="Wall14" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.06, 0, -4.15)
+
+[node name="Wall15" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.06, 0, -4.15)
+
+[node name="Upper Wall" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, -7.64274e-15, 0, -7.64274e-15, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 5, -2.4)
+
+[node name="Upper Wall4" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, -1.42222e-14, 0, 3.34075e-22, 2.44023e-07, 1, -7.64274e-15, -1.86087, 1.31134e-07, 0, 4.1, 1.8)
+
+[node name="Upper Wall6" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, -2.66442e-14, 0, 3.34075e-22, 4.5716e-07, 1, -7.64274e-15, -3.4862, 1.31134e-07, 4, 4.1, 2.45926)
+
+[node name="Upper Wall7" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, -1.71962e-14, 0, 3.34075e-22, 2.95052e-07, 1, -7.64274e-15, -2.25, 1.31134e-07, -4, 4.1, 1.5)
+
+[node name="Upper Wall9" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1.11687, -1.77826e-14, 0, 3.73118e-22, 3.05113e-07, 1, -8.53594e-15, -2.32673, 1.31134e-07, -6.01066, 2.54095, 0.516916)
+
+[node name="Wall27" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -5.69487, 0, -12.6486)
+
+[node name="Wall28" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.69487, 0, -16.6237)
+
+[node name="Wall29" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.70966, 0, -11.6986)
+
+[node name="Wall30" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.70966, 0, -15.4486)
+
+[node name="Wall31" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.57103, 0, -11.7691)
+
+[node name="Wall40" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.57103, 0, -8.21087)
+
+[node name="Wall32" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.57103, 0, -15.5191)
+
+[node name="Upper Wall11" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1.11687, -1.77826e-14, 0, 3.73118e-22, 3.05113e-07, 1, -8.53594e-15, -2.32673, 1.31134e-07, -5.82033, 2.54095, -10.7817)
+
+[node name="Upper Wall13" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(1.11687, -1.77826e-14, 0, 3.73118e-22, 3.05113e-07, 1, -8.53594e-15, -2.32673, 1.31134e-07, -5.82033, 2.54095, -4.99526)
+
+[node name="Upper Wall8" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(2.2807, -1.71962e-14, 0, 7.61925e-22, 2.95052e-07, 1, -1.74308e-14, -2.25, 1.31134e-07, 0, 4.1, -2.5)
+
+[node name="Upper Wall15" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-9.96925e-08, -2.25, 1.31134e-07, 7.61924e-22, 2.95052e-07, 1, -2.2807, 9.83506e-08, -1.99429e-14, -3.43965, 4.1, -4.54012)
+
+[node name="Upper Wall12" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(2.42383, -2.13319e-14, 0, 8.0974e-22, 3.66013e-07, 1, -1.85247e-14, -2.79113, 1.31134e-07, 0, 4.1, -7.84509)
+
+[node name="Upper Wall10" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(2.12073, -1.22417e-14, 0, 7.08482e-22, 2.10043e-07, 1, -1.62082e-14, -1.60174, 1.31134e-07, 0, 4.1, -14.5842)
+
+[node name="Upper Wall14" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-9.26999e-08, -2.95946, -4.37114e-08, 0, -1.29362e-07, 1, -2.12073, 1.29362e-07, 1.91069e-15, 11.2368, 4.1, -15.1248)
+
+[node name="Upper Wall2" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-2.78181e-08, -8.74228e-08, -1, -7.64274e-15, -1, 8.74228e-08, -1, 5.37316e-16, 2.78181e-08, -2, 5, -0.4)
+
+[node name="Upper Wall3" parent="Building/Walls" instance=ExtResource("5_4bte4")]
+transform = Transform3D(-5.96046e-08, 8.74228e-08, 1, -7.64274e-15, -1, 8.74228e-08, 1, 7.10543e-15, 5.96046e-08, 2, 5, -0.4)
+
+[node name="Left Door Frame" parent="Building/Walls" instance=ExtResource("6_g4hkb")]
+transform = Transform3D(-4.37114e-08, 0, -0.5, 0, 1, 0, 1, 0, -2.18557e-08, -1.93, 0, -0.4)
+
+[node name="Left Door Frame2" parent="Building/Walls" instance=ExtResource("6_g4hkb")]
+transform = Transform3D(-4.37114e-08, 0, 0.5, 0, 1, 0, -1, 0, -2.18557e-08, -2.06, 0, -0.4)
+
+[node name="Right Door Frame" parent="Building/Walls" instance=ExtResource("6_g4hkb")]
+transform = Transform3D(1.31134e-07, 0, 0.5, 0, 1, 0, -1, 0, 6.55671e-08, 1.93, 0, -0.4)
+
+[node name="Right Door Frame4" parent="Building/Walls" instance=ExtResource("6_g4hkb")]
+transform = Transform3D(-4.37114e-08, 0, -0.5, 0, 1, 0, 1, 0, -2.18557e-08, 2.06, 0, -0.4)
+
+[node name="Right Door Frame5" parent="Building/Walls" instance=ExtResource("6_g4hkb")]
+transform = Transform3D(1.31134e-07, 0, 0.5, 0, 1, 0, -1, 0, 6.55671e-08, 5.90349, 0, -13.0055)
+
+[node name="Right Door Frame6" parent="Building/Walls" instance=ExtResource("6_g4hkb")]
+transform = Transform3D(1.31134e-07, 0, 0.5, 0, 1, 0, -1, 0, 6.55671e-08, 5.90349, 0, -16.487)
+
+[node name="Right Door Frame2" parent="Building/Walls" instance=ExtResource("6_g4hkb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 0, 3.35)
+
+[node name="Right Door Frame3" parent="Building/Walls" instance=ExtResource("6_g4hkb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 0, 3.35)
+
+[node name="Doors" type="Node3D" parent="Building"]
+script = ExtResource("7_6hxkx")
+
+[node name="Right Door" parent="Building/Doors" instance=ExtResource("7_2apby")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 1.8, -0.4)
+
+[node name="Left Door" parent="Building/Doors" instance=ExtResource("7_2apby")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 1.8, -0.4)
+
+[node name="RD Button" parent="Building/Doors" instance=ExtResource("9_af511")]
+transform = Transform3D(-2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.5, 2, 1.2, 0.3)
+
+[node name="Area3D" type="Area3D" parent="Building/Doors/RD Button"]
+collision_priority = 15.0
+priority = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Doors/RD Button/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00500011, 0, 0.02)
+shape = SubResource("BoxShape3D_2c7ih")
+
+[node name="RD Button Light" type="SpotLight3D" parent="Building/Doors/RD Button"]
+transform = Transform3D(-1.14641e-14, -2, -3.17865e-08, -2.62268e-07, -3.17865e-08, 2, -2, 1.56324e-14, -2.62268e-07, 4.76837e-07, 2, 0)
+light_color = Color(0.715198, 0.493749, 0.394491, 1)
+spot_range = 0.896
+spot_attenuation = -5.0
+spot_angle = 7.44
+
+[node name="LD Button" parent="Building/Doors" instance=ExtResource("9_af511")]
+transform = Transform3D(2.18557e-08, 0.5, 4.37114e-08, 0.5, -2.18557e-08, 0, 1.91069e-15, 4.37114e-08, -0.5, -2, 1.2, 0.3)
+
+[node name="Area3D" type="Area3D" parent="Building/Doors/LD Button"]
+collision_priority = 15.0
+priority = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Doors/LD Button/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00500011, 0, 0.02)
+shape = SubResource("BoxShape3D_2c7ih")
+
+[node name="LD Button Light" type="SpotLight3D" parent="Building/Doors/LD Button"]
+transform = Transform3D(3.82137e-15, -2, -3.17865e-08, 8.74228e-08, -3.17865e-08, 2, -2, -5.21082e-15, 8.74228e-08, 4.76837e-07, 2, 1.78814e-07)
+light_color = Color(0.715198, 0.493749, 0.394491, 1)
+spot_range = 0.896
+spot_attenuation = -5.0
+spot_angle = 7.44
+
+[node name="Light" type="SpotLight3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 3.6, -0.9)
+light_color = Color(0.930804, 0.761604, 0.592979, 1)
+light_energy = 0.151
+spot_range = 5.284
+spot_attenuation = 0.12
+spot_angle = 43.5
+
+[node name="Poster Light" type="SpotLight3D" parent="Building"]
+transform = Transform3D(-1, 5.2108e-15, -8.74228e-08, 0, -1, -5.96046e-08, -8.74228e-08, -5.96046e-08, 1, -1, 1.6, -0.9)
+light_color = Color(0.97253, 0.606536, 0.580293, 1)
+light_energy = 0.152
+spot_range = 1.837
+spot_attenuation = 5.07
+spot_angle = 32.04
+
+[node name="Floors" type="Node3D" parent="Building"]
+
+[node name="Floor" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+
+[node name="Floor2" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="Floor3" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="Floor7" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Floor8" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4)
+
+[node name="Floor19" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89347, 0, 0)
+
+[node name="Floor20" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.89347, 0, -4)
+
+[node name="Floor9" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -4)
+
+[node name="Floor10" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Floor11" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -8)
+
+[node name="Floor12" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -8)
+
+[node name="Floor13" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="Floor14" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -12)
+
+[node name="Floor15" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -12)
+
+[node name="Floor16" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="Floor17" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -16)
+
+[node name="Floor18" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -16)
+
+[node name="Floor4" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Floor6" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
+
+[node name="Floor5" parent="Building/Floors" instance=ExtResource("8_nevbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
+
+[node name="Poster" parent="Building" instance=ExtResource("10_y6utx")]
+transform = Transform3D(0.129409, -1.32709e-08, -0.482963, -0.482963, -3.20388e-08, -0.129409, -2.75124e-08, 0.5, -2.1111e-08, -1, 1.9, -2.27)
+script = ExtResource("11_bynmc")
+
+[node name="Area3D" type="Area3D" parent="Building/Poster"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Building/Poster/Area3D"]
+transform = Transform3D(1, 0, 2.32325e-15, 1.42109e-14, 1, 7.10543e-15, 2.32325e-15, 3.55271e-15, 1, 0.115911, 0, 0.0310583)
+shape = SubResource("SphereShape3D_gxmp3")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_35g41")
+
+[node name="GUI" type="CanvasLayer" parent="GUI"]
+
+[node name="Pixelate" type="ColorRect" parent="GUI/GUI"]
+material = SubResource("ShaderMaterial_tvknd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Power" type="Label" parent="GUI/GUI"]
+offset_left = 28.0
+offset_top = 25.0
+offset_right = 415.0
+offset_bottom = 90.0
+scale = Vector2(0.8, 0.8)
+text = "Power: 100%"
+label_settings = SubResource("LabelSettings_bxbue")
+
+[node name="Time" type="Label" parent="GUI/GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -237.0
+offset_top = 25.0
+offset_right = 18.0
+offset_bottom = 90.0
+grow_horizontal = 0
+scale = Vector2(0.8, 0.8)
+text = "12:00AM"
+label_settings = SubResource("LabelSettings_bxbue")
+horizontal_alignment = 2
+
+[node name="MonitorButton" type="TextureRect" parent="GUI/GUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -112.0
+offset_right = -144.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.2, 0.960005)
+texture = ExtResource("15_akotq")
+
+[node name="CameraManager" type="Node" parent="GUI/GUI"]
+script = ExtResource("17_4gbtx")
+
+[node name="CameraUI" type="Control" parent="GUI/GUI/CameraManager"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Static" type="TextureRect" parent="GUI/GUI/CameraManager/CameraUI"]
+modulate = Color(1, 1, 1, 0.0941176)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AnimatedTexture_ihvqv")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Map" type="TextureRect" parent="GUI/GUI/CameraManager/CameraUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.665
+anchor_top = 0.299
+anchor_right = 0.978
+anchor_bottom = 0.827
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("23_jhmht")
+expand_mode = 1
+
+[node name="CamButtonsParent" type="Control" parent="GUI/GUI/CameraManager/CameraUI/Map"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cam1A" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.271565
+anchor_top = 0.066779
+anchor_right = 0.36475
+anchor_bottom = 0.161476
+offset_left = 3.05176e-05
+offset_top = -3.05176e-05
+offset_right = 3.05176e-05
+offset_bottom = -3.05176e-05
+text = "Cam
+1A"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam1A"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam1B" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239949
+anchor_top = 0.198303
+anchor_right = 0.333134
+anchor_bottom = 0.293
+offset_left = 3.05176e-05
+offset_top = -3.05176e-05
+offset_right = 3.05176e-05
+offset_bottom = -1.52588e-05
+text = "Cam
+1B"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam1B"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam1C" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128461
+anchor_top = 0.38945
+anchor_right = 0.221646
+anchor_bottom = 0.484147
+offset_left = 3.05176e-05
+offset_top = -3.05176e-05
+offset_right = 3.05176e-05
+offset_bottom = -3.05176e-05
+text = "Cam
+1C"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam1C"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam2B" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.271565
+anchor_top = 0.794543
+anchor_right = 0.36475
+anchor_bottom = 0.88924
+text = "Cam
+2B
+"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam2B"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam3" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.103501
+anchor_top = 0.633207
+anchor_right = 0.196686
+anchor_bottom = 0.727904
+offset_left = 2.28882e-05
+offset_right = 2.28882e-05
+text = "Cam
+3"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam3"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam4B" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.532814
+anchor_top = 0.794543
+anchor_right = 0.625998
+anchor_bottom = 0.88924
+text = "Cam
+4B"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam4B"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam4A" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.532814
+anchor_top = 0.684063
+anchor_right = 0.625998
+anchor_bottom = 0.77876
+text = "Cam
+4A"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam4A"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam2A" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.271565
+anchor_top = 0.684063
+anchor_right = 0.36475
+anchor_bottom = 0.77876
+offset_top = -3.05176e-05
+offset_bottom = -3.05176e-05
+text = "Cam
+2A"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam2A"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam5" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0296194
+anchor_top = 0.264941
+anchor_right = 0.0635656
+anchor_bottom = 0.359638
+offset_left = 3.05176e-05
+offset_top = -3.05176e-05
+offset_right = 3.05176e-05
+offset_bottom = -3.05176e-05
+text = "Cam
+5"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam5"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam6" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.825679
+anchor_top = 0.59112
+anchor_right = 0.918864
+anchor_bottom = 0.685817
+offset_top = -3.05176e-05
+offset_bottom = -3.05176e-05
+text = "Cam
+6"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam6"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam7" type="Button" parent="GUI/GUI/CameraManager/CameraUI/Map/CamButtonsParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.825679
+anchor_top = 0.264941
+anchor_right = 0.918864
+anchor_bottom = 0.359638
+offset_top = -3.05176e-05
+offset_bottom = -3.05176e-05
+text = "Cam
+7"
+alignment = 0
+script = ExtResource("24_iyn0x")
+camera_node_name = "Cam7"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/GUI/CameraManager/CameraUI"]
+libraries = {
+"": SubResource("AnimationLibrary_c5k7w")
+}
+
+[node name="CamClickSound" type="AudioStreamPlayer" parent="GUI/GUI/CameraManager"]
+stream = ExtResource("26_h4rfv")
+
+[node name="Cameras" type="Node3D" parent="GUI/GUI/CameraManager"]
+
+[node name="Cam1A" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(0.163326, 0.184865, -0.969097, 0, 0.982287, 0.187381, 0.986572, -0.0306042, 0.160433, -3.35817, 1.9, -17.6144)
+fov = 30.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam1A"]
+spot_range = 4.055
+spot_attenuation = 0.29
+spot_angle = 23.04
+
+[node name="Cam1B" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(-0.841897, 0.101118, -0.530079, 0, 0.982287, 0.187381, 0.539638, 0.157756, -0.826985, -3.30918, 1.9, -14.5469)
+fov = 30.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam1B"]
+transform = Transform3D(0.993725, -0.0209587, 0.109869, 0.0209587, 0.99978, 0.00115497, -0.109869, 0.00115497, 0.993945, 0, 0, 0)
+spot_range = 6.184
+spot_attenuation = 1.01
+spot_angle = 23.04
+
+[node name="Cam1C" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(-0.0225652, -0.187334, 0.982037, -9.66586e-09, 0.982287, 0.187381, -0.999745, 0.00422826, -0.0221654, -3.30918, 1.9, -9.27014)
+fov = 45.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam1C"]
+transform = Transform3D(0.993725, -0.0209587, 0.109869, 0.0209587, 0.99978, 0.00115497, -0.109869, 0.00115497, 0.993945, 0, 0, 0)
+spot_range = 6.184
+spot_attenuation = 1.01
+spot_angle = 23.04
+
+[node name="Cam2A" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(0.950456, -0.0804562, 0.300266, 0, 0.965926, 0.258819, -0.310859, -0.245996, 0.91807, -2.37975, 1.9, -0.643273)
+fov = 55.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam2A"]
+spot_range = 4.859
+spot_attenuation = 0.72
+spot_angle = 23.04
+
+[node name="Cam2B" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(-0.67559, -0.347266, 0.650373, -2.06717e-08, 0.882127, 0.471012, -0.737278, 0.318211, -0.595956, -2.2, 1.9, 1)
+fov = 55.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam2B"]
+spot_range = 3.0
+spot_attenuation = 2.8
+spot_angle = 40.0
+
+[node name="Cam3" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(0.559193, -0.65418, 0.509266, 0, 0.614285, 0.789084, -0.829038, -0.44125, 0.343504, -4.1975, 1.9, -1.6898)
+fov = 55.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam3"]
+spot_range = 3.0
+spot_attenuation = 2.8
+spot_angle = 40.0
+
+[node name="Cam4A" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(0.950516, 0.080409, -0.30009, 0, 0.965926, 0.258819, 0.310676, -0.246012, 0.918128, 2.38, 1.9, -0.643)
+fov = 55.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam4A"]
+spot_range = 4.859
+spot_attenuation = 0.72
+spot_angle = 23.04
+
+[node name="Cam4B" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(-0.67559, 0.347266, -0.650373, 6.06815e-09, 0.882127, 0.471012, 0.737278, 0.318211, -0.595956, 2.2, 1.9, 1)
+fov = 55.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam4B"]
+spot_range = 3.0
+spot_attenuation = 2.8
+spot_angle = 40.0
+
+[node name="Cam5" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(0.362682, 0.291069, -0.885291, 0, 0.949972, 0.312335, 0.931913, -0.113278, 0.344538, -7.34953, 1.9, -13.0119)
+fov = 55.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam5"]
+spot_range = 4.055
+spot_attenuation = 2.8
+spot_angle = 40.0
+
+[node name="Cam6" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(-0.537283, 0.176824, -0.824658, 0.00780419, 0.978776, 0.204785, 0.843366, 0.103592, -0.527259, 6.05616, 1.9, -8.09962)
+fov = 1.0
+
+[node name="Cam7" type="Camera3D" parent="GUI/GUI/CameraManager/Cameras"]
+transform = Transform3D(-0.863396, 0.127176, -0.488236, 0, 0.967709, 0.252069, 0.504528, 0.217636, -0.835516, 4.53396, 1.9, -18.0937)
+fov = 45.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="GUI/GUI/CameraManager/Cameras/Cam7"]
+spot_range = 4.708
+spot_attenuation = 2.6
+spot_angle = 30.65
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8o6an")
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1bbm0")
+
+[node name="BoopSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.9, -2.2)
+stream = ExtResource("13_sqpk4")
+
+[node name="Left Door Sound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -0.4)
+stream = ExtResource("14_fet40")
+
+[node name="Right Door Sound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -0.4)
+stream = ExtResource("14_fet40")
+
+[connection signal="input_event" from="Building/Doors/RD Button/Area3D" to="Building/Doors" method="_on_rightDoorButton_input_event"]
+[connection signal="input_event" from="Building/Doors/LD Button/Area3D" to="Building/Doors" method="_on_leftDoorButton_input_event"]
+[connection signal="input_event" from="Building/Poster/Area3D" to="Building/Poster" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="GUI/GUI/MonitorButton" to="GUI" method="_on_monitor_button_mouse_entered"]

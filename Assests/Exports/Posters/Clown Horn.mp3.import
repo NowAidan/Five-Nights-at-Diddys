@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjiokhnfagcft"
+path="res://.godot/imported/Clown Horn.mp3-ba5283d44267aadca6ae5770bc26324c.mp3str"
+
+[deps]
+
+source_file="res://Assests/Exports/Posters/Clown Horn.mp3"
+dest_files=["res://.godot/imported/Clown Horn.mp3-ba5283d44267aadca6ae5770bc26324c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
