@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Five Nights at Diddy's"
-config/tags=PackedStringArray("release")
+config/tags=PackedStringArray("cancelled")
 run/main_scene="res://Scenes/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.0807833, 0.0807833, 0.0807833, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"

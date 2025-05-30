@@ -22,3 +22,7 @@ func _process(delta : float) -> void:
 	elif mouse_position.x > right_dist:
 		rotate_y(deg_to_rad(-(mouse_position.x - right_dist) * delta * sensitivity - initial_turning_speed))
 	rotation.y = clamp(rotation.y, deg_to_rad(-50.0), deg_to_rad(50.0))
+
+
+func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	pass # Replace with function body.
