@@ -642,7 +642,7 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 3.6, -0.9)
 light_color = Color(0.930804, 0.761604, 0.592979, 1)
 light_energy = 0.151
 spot_range = 5.284
-spot_attenuation = 0.12
+spot_attenuation = -0.3
 spot_angle = 43.5
 
 [node name="Poster Light" type="SpotLight3D" parent="Location"]
